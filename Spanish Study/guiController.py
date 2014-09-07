@@ -18,12 +18,22 @@ def selectList():
 	x = easygui.choicebox(msg = 'Please select a list of words'\
 	, title = title, choices = y)
 	return x
-	
+
 def userQuestion(languageValue):
 	x = easygui.enterbox(msg = "Enter the word for " + languageValue, title = title)
 	return x
 
-def wrongAnswers(x, y):	
-	#Color Text
-	x = easygui.msgbox(msg = "You put " + x + "when it should have been " + y)
+def wrongAnswer(x):
+    c = 2
+    eng = ''
+    spanish = ''
+    leng = len(x)
+    for y in x:
+        if c % 2 == 0:
+            eng = x[c-2]
+            c += 1
+        else:
+           spanish = x[c-2]
+           c += 1
+           texbox = easygui.msgbox('You put %s instead of %s' % (eng, spanish))
 
