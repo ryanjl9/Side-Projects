@@ -4,20 +4,19 @@ import listChecker
 title = 'Spanish Study'
 
 def startup():
-	x = easygui.enterbox(msg = 'Please type (s) if you want to be quizzed in Spanish\
- or type (e) if you want to be quizzed in English', title = title)
-	if x =='s':
-		return 's'
-	elif x == 'e':
-		return 'e'
-	else:
-		return 'error'
+	x = easygui.buttonbox(msg = 'Please type (s) if you want to be quizzed in Spanish\
+ or type (e) if you want to be quizzed in English', title = title, choices=('Spanish', 'English'))
+	if x =='Spanish':
+		return 'spanish'
+	elif x == 'English':
+		return 'english'
 
 def selectList():
 	y = listChecker.validObject()
 	x = easygui.choicebox(msg = 'Please select a list of words'\
 	, title = title, choices = y)
 	return x
+	
 
 def userQuestion(languageValue):
 	x = easygui.enterbox(msg = "Enter the word for " + languageValue, title = title)
@@ -36,4 +35,6 @@ def wrongAnswer(x):
            spanish = x[c-2]
            c += 1
            texbox = easygui.msgbox('You put %s instead of %s' % (eng, spanish))
+           eng = ''
+           spanish = ''
 
