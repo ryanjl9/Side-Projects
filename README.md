@@ -1,4 +1,4 @@
-Side-Project
-============
+Side-Projects
+=============
 
-My project for helping me with spanish homework
+"SpanishStudy" - My project for helping me with spanish homework
