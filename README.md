@@ -1,4 +1,4 @@
 Side-Projects
 =============
 
-"SpanishStudy" - My project for helping me with spanish homework (Mac only)
+"SpanishStudy" - My project for helping me with spanish homework (Mac only executable)
