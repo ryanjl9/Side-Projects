@@ -105,21 +105,14 @@ loop = True
 board.render()
 while(loop):
 	direction = raw_input('Which direction do you want to move (wasd) > ')
-	if direction[0] == '!': #Debug Stuff
-		command = compile(direction[1:len(direction)], '<string>', 'exec')
-		exec command
-	elif direction != 'close': #If close isn't passed, player moves and board is re-rendered
-		board.direction(direction)
-		board.render()
-	else:
-		loop = False
-
-
-		
-	
-
-
-
-
-
-
+	try:
+		if direction[0] == '!': #Debug Stuff
+			command = compile(direction[1:len(direction)], '<string>', 'exec')
+			exec command
+		elif direction != 'close': #If close isn't passed, player moves and board is re-rendered
+			board.direction(direction)
+			board.render()
+		else:
+			loop = False
+	except IndexError:
+		pass
